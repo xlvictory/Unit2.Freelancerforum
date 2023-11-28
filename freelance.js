@@ -15,6 +15,7 @@ const additionalWorkers = [
     { name: "Riley", price: 30, job: "writer" },
     { name: "Brandon", price: 40, job: "MUA" }
 ];
+
 let maxWorkers = 7;
 const addWorkerIntervalId = setInterval(addWorker, 3000);
 
@@ -30,8 +31,16 @@ function render() {
         return element;
     });
     freelanceContainer.replaceChildren(...freelanceElements);
-// let text = document.getElementById("workers").textContent;
+}
 
+let text = document.getElementById("workers").textContent;
+
+function avgPrice() {
+   let total = (freelancers.price += additionalWorkers.price); 
+   for(let i=0; i < total.length; i++){
+    avg = (total / total[i]); 
+   }
+    return `The average starting price is: ${avg}.`
 }
 
 function addWorker() {
@@ -43,8 +52,3 @@ function addWorker() {
     render();
 }
 
-function avgPrice() {
-    
-    
-}let total = freelancers.price + additionalWorkers.price;
-console.log(total)
